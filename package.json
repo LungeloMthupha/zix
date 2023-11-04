@@ -1,0 +1,16 @@
+{
+  "name": "zix",
+  "version": "1.0.0",
+  "description": "Break clock display.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Lungelo Mthupha",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^27.0.2"
+  }
+
+}

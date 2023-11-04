@@ -1,0 +1,96 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: "Outfit";
+    src: url("../fonts/Outfit-VariableFont_wght.ttf");
+    src: url("../fonts/Outfit-VariableFont_wght.ttf") format("ttf");
+    }
+
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    font-weight:300;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter:invert(100%);
+    cursor:none;
+    background-color: white;
+}
+
+main span {
+    font-size: 100px;
+    font-variant-numeric: tabular-nums;
+    font-family: 'Outfit', sans-serif;
+}
+
+main span::after{
+    content: "";
+}
+p,span,h2{
+     animation: showSpacer 3s ease-in-out;
+}
+
+@keyframes slide{
+    0%{
+        transform: translateY(50px);
+        transition: 1ms;
+        opacity: 0;
+    }
+    50%{
+         transform: translateY(-0px);
+        transition: 1ms;
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-50px);
+        transition: 1ms;
+        opacity: 0;
+    }
+}
+
+
+span{
+    animation: slide 1s ease-out linear;
+}
+
+.clock{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.spacer{
+    font-size: 50px;
+    /* animation: showSpacer 2s ease-in-out; */
+}
+
+.day_unit{
+    text-align: center;
+}
+
+
+.hours{
+    min-width: 100px;
+}
+.hours #hours{
+    text-align: right;
+}
+
+@keyframes showSpacer{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
