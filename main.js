@@ -1,4 +1,4 @@
-const { app, BrowserWindow,globalShortcut } = require('electron');
+const { app, BrowserWindow,globalShortcut,Tray, Menu } = require('electron');
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -10,10 +10,12 @@ const createWindow = () => {
     win.maximize();
     win.loadFile('index.html')
 }
+
+
   
-app.whenReady().then(() => {
-    createWindow()
-})
+// app.whenReady().then(() => {
+//     createWindow()
+// })
   
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
@@ -31,6 +33,13 @@ app.on('will-quit', () => {
 
 app.whenReady().then(() => {
     createWindow()
+  const tray = new Tray('./ico/Zix.ico');
+  const contextMenu = Menu.buildFromTemplate([
+    { label: 'Break', type: 'radio' },
+  ]);
+
+  tray.setToolTip('Zix');
+  tray.setContextMenu(contextMenu)
   
     app.on('activate', () => {
       if (BrowserWindow.getAllWindows().length === 0) createWindow()
