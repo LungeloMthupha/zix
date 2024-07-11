@@ -38,4 +38,18 @@ module.exports = {
       },
     },
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'LungeloMthupha',
+          name: 'zix'
+        },
+        authToken:process.env.GITHUB_TOKEN,
+        prerelease: false,
+        draft: true
+      }
+    }
+  ]
 };
